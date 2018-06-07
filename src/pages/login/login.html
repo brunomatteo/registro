@@ -1,0 +1,38 @@
+
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="https://www.google.it/search?tbs=sbi:AMhZZiuo5nqcjL58uHD4GT_1fLHYY09kEYhcrNGDpPgiTJmHJjKguCrcf-hkeKV92rt1I2mYKbo-ISXo4QZQ8bBSqmJai50FrBdLnUFQPON9SaDsZ4MIkiudKO0eWDyjHXnR2zqbfohTSTTl7R2f6w3cPgVxsRLoNthH7hbDcHFh2tyt9NHaav-gpXTBo68NjnZt1Kh5kQBP2RQFjbWmP9CODlnNRGEZtwvQEeXK74txvQIgzKODjKiA-68nNSHOjjt7suGfDbbeacGPBiM5elSz2nxqBQ0NYjnHj_19ea0clkJ5UHg4nC9ZqGPi1vSWVPm810xU7GgEMU5i2EdTwcN3rfxctRWwsOAw#"/>//per cambiare la foto del login (anche se non funziona)
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+    <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>
+
+  </div>
+</ion-content>
